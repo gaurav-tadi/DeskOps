@@ -69,6 +69,8 @@ export const logoutUser = async (_req, res, next) => {
   try {
     res.cookie("jwt", "", {
       httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
       expires: new Date(0),
     });
 

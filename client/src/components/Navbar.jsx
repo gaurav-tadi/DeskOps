@@ -44,8 +44,8 @@ export default function Navbar() {
 
   return (
     <nav className="border-b border-gray-200 bg-white shadow-sm">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
-        <div className="flex items-center space-x-3">
+      <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8">
+        <div className="min-w-0 flex items-center space-x-3">
           <Link
             to={getDashboardPath(user.role)}
             className="group flex items-center gap-3 text-gray-900 transition hover:scale-[1.02] dark:text-white"
@@ -63,7 +63,7 @@ export default function Navbar() {
           </Link>
         </div>
 
-        <div className="flex items-center space-x-4">
+        <div className="flex flex-wrap items-center justify-end gap-2 sm:gap-4">
           <div className="hidden sm:flex flex-col text-right">
             <span className="text-sm font-semibold text-gray-800">
               {user.name || user.email}
