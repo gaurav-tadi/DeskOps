@@ -92,6 +92,69 @@ button:focus:not(:focus-visible) {
   }
 }
 
+@media (max-width: 380px) {
+  .deskops-nav-inner {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    gap: 0.35rem;
+  }
+
+  .deskops-nav-brand {
+    gap: 0.35rem;
+  }
+
+  .deskops-logo-mark {
+    height: 1.8rem;
+    width: 1.8rem;
+    border-radius: 0.65rem 0.65rem 0.65rem 0.2rem;
+    box-shadow: 2px 2px 0 #f59e0b;
+  }
+
+  .deskops-logo-core {
+    font-size: 0.95rem;
+  }
+
+  .deskops-logo-spark {
+    right: -0.3rem;
+    top: -0.4rem;
+    height: 0.8rem;
+    width: 0.8rem;
+    font-size: 0.6rem;
+  }
+
+  .deskops-brand-name > span:first-child {
+    font-size: 0.95rem;
+  }
+
+  .deskops-brand-name > span:last-child {
+    display: none;
+  }
+
+  .deskops-nav-actions {
+    gap: 0.25rem;
+  }
+
+  .deskops-nav-role {
+    padding-left: 0.35rem;
+    padding-right: 0.35rem;
+    font-size: 0.55rem;
+  }
+
+  .deskops-nav-theme,
+  .deskops-nav-logout {
+    padding: 0.35rem 0.45rem;
+    font-size: 0.65rem;
+  }
+
+  .deskops-nav-theme span {
+    gap: 0.2rem;
+  }
+
+  .deskops-nav-theme .theme-toggle-icon {
+    font-size: 0.8rem;
+  }
+}
+
 :root.dark .bg-gray-50 {
   background-color: #111827;
 }

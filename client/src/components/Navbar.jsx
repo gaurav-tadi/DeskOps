@@ -44,8 +44,8 @@ export default function Navbar() {
 
   return (
     <nav className="border-b border-gray-200 bg-white shadow-sm">
-      <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8">
-        <div className="min-w-0 flex items-center space-x-3">
+      <div className="deskops-nav-inner mx-auto flex max-w-7xl flex-nowrap items-center justify-between gap-2 px-3 py-2 sm:gap-3 sm:px-6 sm:py-3 lg:px-8">
+        <div className="deskops-nav-brand min-w-0 flex shrink items-center space-x-2 sm:space-x-3">
           <Link
             to={getDashboardPath(user.role)}
             className="group flex items-center gap-3 text-gray-900 transition hover:scale-[1.02] dark:text-white"
@@ -54,7 +54,7 @@ export default function Navbar() {
               <span className="deskops-logo-core">D</span>
               <span className="deskops-logo-spark">+</span>
             </span>
-            <span className="flex flex-col leading-none">
+            <span className="deskops-brand-name flex flex-col leading-none">
               <span className="text-lg font-black tracking-tight">DeskOps</span>
               <span className="mt-1 text-[0.6rem] font-semibold uppercase tracking-[0.2em] text-cyan-600 dark:text-cyan-400">
                 Helpdesk
@@ -63,7 +63,7 @@ export default function Navbar() {
           </Link>
         </div>
 
-        <div className="flex flex-wrap items-center justify-end gap-2 sm:gap-4">
+        <div className="deskops-nav-actions flex shrink-0 items-center justify-end gap-1.5 sm:gap-4">
           <div className="hidden sm:flex flex-col text-right">
             <span className="text-sm font-semibold text-gray-800">
               {user.name || user.email}
@@ -72,7 +72,7 @@ export default function Navbar() {
           </div>
 
           <span
-            className={`inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold ${getRoleBadgeStyle(
+            className={`deskops-nav-role inline-flex items-center rounded-full border px-2 py-0.5 text-[0.65rem] font-semibold ${getRoleBadgeStyle(
               user.role,
             )}`}
           >
@@ -87,7 +87,7 @@ export default function Navbar() {
             }
             aria-pressed={darkMode}
             title={darkMode ? "Switch to light mode" : "Switch to dark mode"}
-            className="theme-toggle cursor-pointer rounded-xl border border-gray-200 bg-gray-50 px-3 py-2 text-xs font-semibold text-gray-700 transition hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-100 dark:hover:bg-gray-600"
+            className="theme-toggle deskops-nav-theme cursor-pointer rounded-xl border border-gray-200 bg-gray-50 px-2.5 py-1.5 text-xs font-semibold text-gray-700 transition hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-100 dark:hover:bg-gray-600 sm:px-3 sm:py-2"
           >
             <span className="flex items-center gap-2">
               <span
@@ -106,7 +106,7 @@ export default function Navbar() {
           <button
             type="button"
             onClick={handleLogout}
-            className="cursor-pointer rounded-lg bg-gray-100 px-3 py-1.5 text-xs font-medium text-gray-700 hover:bg-red-50 hover:text-red-600 focus:outline-none transition"
+            className="deskops-nav-logout cursor-pointer rounded-lg bg-gray-100 px-2.5 py-1.5 text-xs font-medium text-gray-700 hover:bg-red-50 hover:text-red-600 focus:outline-none transition sm:px-3"
           >
             Logout
           </button>
