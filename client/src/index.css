@@ -1,0 +1,144 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  color-scheme: light;
+}
+
+:root.dark {
+  color-scheme: dark;
+}
+
+html,
+body {
+  min-width: 320px;
+  min-height: 100%;
+  transition:
+    background-color 180ms ease,
+    color 180ms ease;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+button:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.deskops-logo-mark {
+  position: relative;
+  display: inline-flex;
+  height: 2.25rem;
+  width: 2.25rem;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #06b6d4;
+  border-radius: 0.8rem 0.8rem 0.8rem 0.25rem;
+  background: #0f172a;
+  color: #ecfeff;
+  box-shadow: 3px 3px 0 #f59e0b;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.group:hover .deskops-logo-mark {
+  transform: rotate(-4deg) translateY(-1px);
+  box-shadow: 5px 5px 0 #f59e0b;
+}
+
+.deskops-logo-core {
+  font-size: 1.15rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.deskops-logo-spark {
+  position: absolute;
+  right: -0.4rem;
+  top: -0.55rem;
+  display: flex;
+  height: 1rem;
+  width: 1rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background: #f59e0b;
+  color: #451a03;
+  font-size: 0.75rem;
+  font-weight: 900;
+}
+
+.theme-toggle-icon {
+  display: inline-block;
+  animation: theme-icon-swap 260ms ease both;
+}
+
+@keyframes theme-icon-swap {
+  from {
+    opacity: 0;
+    transform: rotate(-90deg) scale(0.45);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+:root.dark .bg-gray-50 {
+  background-color: #111827;
+}
+
+:root.dark .bg-white {
+  background-color: #1f2937;
+}
+
+:root.dark .bg-gray-100 {
+  background-color: #374151;
+}
+
+:root.dark .bg-gray-200 {
+  background-color: #4b5563;
+}
+
+:root.dark .text-gray-900 {
+  color: #f9fafb;
+}
+
+:root.dark .text-gray-800 {
+  color: #f3f4f6;
+}
+
+:root.dark .text-gray-700 {
+  color: #e5e7eb;
+}
+
+:root.dark .text-gray-600,
+:root.dark .text-gray-500 {
+  color: #9ca3af;
+}
+
+:root.dark .border-gray-200,
+:root.dark .border-gray-300 {
+  border-color: #4b5563;
+}
+
+:root.dark input,
+:root.dark textarea,
+:root.dark select {
+  color: #f9fafb;
+  background-color: #374151;
+  border-color: #6b7280;
+}
+
+:root.dark input::placeholder,
+:root.dark textarea::placeholder {
+  color: #9ca3af;
+}
